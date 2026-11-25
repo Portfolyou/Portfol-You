@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portfol-You – A free e-portfolio for students</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<header id="siteheader" hidden>
+  <a class="logo" href="#top"><i></i>Portfol-You</a>
+  <button id="menu" class="btn ghost" aria-expanded="false" aria-controls="navigation" type="button">☰ Menu</button><nav id="navigation" aria-label="Main navigation"><a href="#top" data-fil="Simula">Home</a><a href="#problems" data-fil="Tungkol">About</a><a href="#skills" data-fil="Kasanayan">Skills</a><a href="#showcase" data-fil="Mga proyekto">Projects</a><a id="workspaceLink" href="#student-dashboard" data-fil="Workspace">Workspace</a><a href="#contact" data-fil="Makipag-ugnayan">Contact</a></nav>
+  <div class="hdr"><span id="roleIndicator" class="role-indicator"></span><button class="btn ghost" id="accountAction" type="button">Log in</button><button class="btn ghost" id="lang" type="button">Filipino</button><a class="btn" id="cta" href="#welcome" data-fil="Magpalit ng papel">Switch role</a></div>
+</header>
+
+<div id="publicview" hidden><main id="top">
+<div class="hero">
+  <div>
+    <span class="eyebrow">PORTFOL-YOU / STUDENT E-PORTFOLIO</span><h1>Show what you can do, not only your grade.</h1>
+    <p>Portfol-You is a free, public e-portfolio for students. Upload your projects, get teachers to verify them, and share one link with schools and employers.</p>
+    <a class="btn" href="#portfolios">Browse portfolios</a>
+    <a class="btn ghost" href="#problems">About Portfol-You</a>
+    <a class="btn ghost" id="homeworkspace" href="#top" hidden>Open workspace</a>
+  </div>
+  <div class="demo" id="privacydemo" aria-live="polite">
+    <h3>Try it: who can see this profile?</h3>
+    <div class="seg" role="group" aria-label="Privacy level">
+      <button aria-pressed="true" data-p="public">Public</button>
+      <button aria-pressed="false" data-p="link">Link only</button>
+      <button aria-pressed="false" data-p="school">School only</button>
+      <button aria-pressed="false" data-p="private">Private</button>
+    </div>
+    <div class="profile"><div class="av">M</div><div><b>Maria Santos</b><span>Grade 12 · STEM · Rodriguez, Rizal</span></div></div>
+    <div class="chips"><span class="chip">Python</span><span class="chip">Research</span><span class="chip">Graphic design</span></div>
+    <div class="proj"><span>Rainwater sensor for school garden</span><span class="ok">Teacher verified</span></div>
+    <div class="proj"><span>Barangay recycling poster series</span><span class="ok">Teacher verified</span></div>
+    <div class="state" id="state"></div>
+  </div>
+</div>
+<div class="home-explore"><div class="section-kicker">EXPLORE THE PLATFORM</div><div class="home-grid"><a class="panel quicklink" href="#portfolios"><span>01 / DIRECTORY</span><h3>Student portfolios</h3><p>Discover real student websites and verified work.</p><b>Browse portfolios →</b></a><a class="panel quicklink" href="#skills"><span>02 / DISCOVERY</span><h3>Explore skills</h3><p>Find projects by technical and creative skills.</p><b>Explore skills →</b></a><a class="panel quicklink" href="#showcase"><span>03 / SHOWCASE</span><h3>Student projects</h3><p>See practical examples of student learning.</p><b>View projects →</b></a></div></div></main>
+
+<section id="problems">
+  <span class="eyebrow">ABOUT THE PLATFORM</span><h2>Eight real problems, eight sets of features</h2>
+  <p class="lead">Pick a problem to see how the website handles it.</p>
+  <div class="probs">
+    <div class="plist" role="tablist" id="plist"></div>
+    <div class="panel" id="panel" role="tabpanel" aria-live="polite"></div>
+  </div>
+</section>
+
+<section id="skills"><span class="eyebrow">EXPLORE TALENT</span><h2>Explore skills</h2><p class="lead">Browse skills by category or search for a specific competency. Select a skill to explore related projects.</p><div class="gallerytools"><input id="skillSearch" type="search" aria-label="Search skills" placeholder="Search skills or students"><select id="skillCategory" aria-label="Skill category"><option value="">All categories</option></select></div><p id="skillStatus" class="note" aria-live="polite"></p><div class="grid" id="skillcards"></div></section>
+<section id="showcase"><span class="eyebrow">PROJECT SHOWCASE</span><h2>Explore student projects</h2><p class="lead">Discover portfolio work and illustrative sample projects in one gallery.</p><div class="gallerytools"><input id="projectSearch" type="search" aria-label="Search projects" placeholder="Search projects, students or skills"><select id="projectSkill" aria-label="Filter by skill"><option value="">All skills</option></select><select id="projectSource" aria-label="Filter by source"><option value="">All sources</option><option value="portfolio">Student portfolios</option><option value="sample">Illustrative samples</option></select></div><p id="projectStatus" class="note" aria-live="polite"></p><div id="filters" hidden></div><div class="grid" id="grid"></div></section>
+
+
+
+
+
+
+
+
+<section id="portfolios"><span class="eyebrow">STUDENT DIRECTORY</span><h2 data-fil="Mga Portfolio ng Estudyante">Student Portfolios</h2><p class="lead" data-fil="Tuklasin ang mga personal na website ng estudyante.">Browse student portfolios created here or submitted as website links.</p><div class="gallerytools"><input id="portfolioSearch" type="search" placeholder="Search name, course or skill" aria-label="Search portfolios"><select id="portfolioCourse" aria-label="Filter by course"><option value="">All courses</option></select><a id="portfolioCreate" class="btn ghost" href="#student-dashboard" hidden>+ Create Portfolio</a><button id="portfolioAdd" class="btn" type="button" hidden>+ Submit Portfolio</button></div><form id="portfolioForm" class="panel" hidden><h3>Submit your public portfolio</h3><label>Student name<input name="student" required maxlength="100"></label><label>Course<input name="course" required maxlength="100"></label><label>Skills (comma separated)<input name="skills" required maxlength="180"></label><label>Portfolio website URL<input name="url" type="url" required placeholder="https://example.com"></label><label>Public profile image URL (optional)<input name="image" type="url" placeholder="https://example.com/profile.jpg"></label><label>Projects (one title per line, optional)<textarea name="projects" rows="4" maxlength="1000"></textarea></label><label>Description<textarea name="description" required maxlength="400" rows="3"></textarea></label><label class="chk"><input name="consent" type="checkbox" required> I have permission to share this public website and any personal information it contains.</label><button class="btn" type="submit">Add portfolio</button> <button class="btn ghost" type="button" id="portfolioCancel">Cancel</button></form><p id="portfolioStatus" role="status" class="note"></p><div id="portfolioGrid" class="grid"></div><dialog id="portfolioDetail" class="panel"><div id="portfolioDetailBody"></div><form method="dialog"><button class="btn ghost">Close</button></form></dialog><p class="note">Website links are saved in this browser. Built-in portfolios appear here during this session after educator verification, if public and eligible.</p></section><section id="contact"><span class="eyebrow">GET IN TOUCH</span><h2 data-fil="Makipag-ugnayan">Contact Portfol-You</h2><p class="lead" data-fil="Subukan ang form. Walang mensaheng ipapadala sa server.">Try the contact form. This demo does not send messages to a server.</p><form id="contactform" class="panel"><label><span data-fil="Pangalan">Name</span><input name="name" required autocomplete="name"></label><label><span data-fil="Email">Email</span><input name="email" type="email" required autocomplete="email"></label><label><span data-fil="Mensahe">Message</span><textarea name="message" rows="5" required></textarea></label><button class="btn" type="submit" data-fil="Suriin ang mensahe">Submit message</button><p id="contactstatus" role="status"></p></form></section>
+</div><section id="welcome" class="welcome"><span class="eyebrow">WELCOME TO</span><h1>Portfol-You</h1><p class="welcomeintro" data-fil="Ipakita ang iyong kakayahan. Tuklasin ang mga oportunidad.">Your skills. Your story. Your future.</p><h2 data-fil="Sino ka?">How would you like to use Portfol-You?</h2><p class="note" data-fil="Piliin ang iyong papel upang magsimula.">Choose your role to personalize your experience.</p><div class="rolegrid panel"><button type="button" class="rolecard" data-role="student"><span class="roleicon" aria-hidden="true">🎓</span><strong data-fil="Estudyante">Student</strong><small data-fil="Gumawa ng portfolio at resume">Create your portfolio and resume</small><span class="roleenter" data-fil="Piliin">Select →</span></button><button type="button" class="rolecard" data-role="employer"><span class="roleicon" aria-hidden="true">💼</span><strong data-fil="Employer">Employer</strong><small data-fil="Maghanap at pumili ng estudyante">Discover and shortlist student talent</small><span class="roleenter" data-fil="Piliin">Select →</span></button><button type="button" class="rolecard" data-role="educator"><span class="roleicon" aria-hidden="true">📚</span><strong data-fil="Guro">Educator</strong><small data-fil="Suriin ang proyekto at magbigay ng feedback">Review projects and provide feedback</small><span class="roleenter" data-fil="Piliin">Select →</span></button></div><div class="row welcomeactions"><label><input type="checkbox" id="rememberrole"> Remember my role</label><button class="btn" id="enterrole" disabled>Continue</button><button class="btn ghost" id="guest">Explore as guest</button></div><p class="note">Showcase · Validate · Connect — Browse freely · Sign in to use role tools</p></section><div id="dashboard" hidden><div class="dashhead panel"><div><span class="eyebrow">PORTFOL-YOU / WORKSPACE</span><h2 id="dashtitle" tabindex="-1"></h2><p id="dashdesc" class="note"></p></div></div><div id="overview" class="grid"></div><section id="signup">
+  <h2 data-fil="Gumawa ng portfolio sa tatlong hakbang">Create your portfolio in three steps</h2>
+  <p class="lead" data-fil="Mag-sign up, pumili ng itsura, at idagdag ang unang proyekto. Nag-a-update ang preview habang nagta-type ka.">Sign up, pick a look, add your first project. The preview updates as you type.</p>
+  <p><a class="btn ghost" href="#portfolios">Browse all portfolios or submit a website link</a></p><div class="builder">
+   <div class="panel">
+    <div class="stepbar"><span id="b1" class="on" data-fil="1. Akawnt">1. Account</span><span id="b2" data-fil="2. Itsura at privacy">2. Look and privacy</span><span id="b3" data-fil="3. Unang proyekto">3. First project</span></div>
+    <div id="sp1">
+     <label><span data-fil="Buong pangalan">Full name</span><input id="f-name" autocomplete="name" placeholder="Maria Santos"></label>
+     <label>Course<input id="f-course" placeholder="Computer Engineering" maxlength="100"></label><label><span>School email</span><input id="f-email" type="email" autocomplete="email" placeholder="maria@school.edu.ph"></label>
+     <label><span data-fil="Taon ng kapanganakan">Birth year</span><input id="f-year" type="number" min="1951" max="2026" placeholder="2009"></label>
+     <label id="guard" class="chk" hidden><input type="checkbox" id="f-g"><span data-fil="Pumapayag ang aking magulang o tagapag-alaga sa akawnt na ito, dahil wala pa akong 18.">My parent or guardian agrees to this account, because I’m under 18.</span></label>
+     <button class="btn" id="n1" type="button" data-fil="Susunod">Next</button>
+    </div>
+    <div id="sp2" hidden>
+     <b data-fil="Pumili ng template">Choose a template</b>
+     <div class="seg2 tpls"><button type="button" data-t="clean" data-fil="Simple">Clean</button><button type="button" data-t="bold" data-fil="Matapang">Bold</button><button type="button" data-t="show" data-fil="Showcase">Showcase</button></div>
+     <b data-fil="Sino ang makakakita?">Who can see it?</b>
+     <div class="seg2 prv"><button type="button" data-q="public" data-fil="Publiko">Public</button><button type="button" data-q="link" data-fil="Link lang">Link only</button><button type="button" data-q="school" data-fil="Paaralan lang">School only</button><button type="button" data-q="private" data-fil="Pribado">Private</button></div>
+     <p class="note" data-fil="Nakatago palagi ang address, telepono at buong kaarawan. Kung wala ka pang 18, magsisimula sa Paaralan lang ang profile.">Address, phone and full birthdate are always hidden. If you’re under 18, your profile starts as School only.</p>
+     <div class="row"><button class="btn ghost" id="bk2" type="button" data-fil="Bumalik">Back</button><button class="btn" id="n2" type="button" data-fil="Susunod">Next</button></div>
+    </div>
+    <div id="sp3" hidden>
+     <label><span data-fil="Pamagat ng proyekto">Project title</span><input id="f-title" placeholder="Rainwater sensor"></label>
+     <b data-fil="Mga kasanayan">Skills</b>
+     <div class="filters" id="f-skills" style="margin-top:8px"></div>
+     <label><span data-fil="Ano ang ginawa at natutunan mo?">What did you make and learn?</span><textarea id="f-desc" rows="3"></textarea></label>
+     <div class="row"><button class="btn ghost" id="bk3" type="button" data-fil="Bumalik">Back</button><button class="btn" id="pub" type="button" data-fil="I-save ang portfolio">Save portfolio</button></div>
+     <p class="why" id="done" hidden style="margin-top:14px"></p>
+     <div id="resume" hidden><div class="pvlabel" style="margin-top:14px" data-fil="Draft ng resume">Resume draft</div><div class="resume" id="rtxt"></div><button class="btn ghost" id="copyr" type="button" data-fil="Kopyahin ang resume">Copy resume text</button> <span class="meta" id="cmsg" role="status"></span></div>
+    </div>
+   </div>
+   <div><div class="pvlabel" data-fil="Live na preview">Live preview</div><div id="pv" aria-live="polite"></div></div>
+  </div>
+</section><section id="employers">
+  <h2 data-fil="Para sa mga employer at paaralan">Find student talent</h2>
+  <p class="lead" data-fil="Maghanap ng na-verify na portfolio ayon sa kasanayan o lugar. I-save ang mga estudyante sa shortlist at kontakin sila sa pamamagitan ng Portfol-You.">Search verified portfolios by skill or place. Save students to a shortlist and contact them through Portfol-You.</p>
+  <div class="emp">
+   <div>
+    <div class="tools"><input id="q" type="search" placeholder="Search skill, school or place" data-fph="Maghanap ng kasanayan o lugar" aria-label="Search"><label class="chk" style="display:flex;gap:6px;margin:0"><input id="vo" type="checkbox"><span data-fil="Na-verify lang">Verified only</span></label></div>
+    <div id="cands"></div>
+   </div>
+   <div class="panel"><h3 data-fil="Shortlist">Shortlist</h3><div id="sl"></div></div>
+  </div>
+</section><section id="teachers">
+  <h2 data-fil="Para sa mga guro">Review student projects</h2>
+  <p class="lead" data-fil="Suriin ang mga proyekto ng estudyante, magbigay ng feedback, at i-verify ang gawa. Lalabas ang desisyon mo sa portfolio ng estudyante. I-save ang portfolio sa dashboard ng estudyante at lalabas ito sa pila na ito.">Review student projects, leave feedback, and verify the work. Your decision shows on the student’s portfolio. Save a portfolio in the student dashboard and it appears in this queue.</p>
+  <div class="tq" id="tq"></div>
+</section><section id="extraspace"><h2 id="extraheading"></h2><div id="extracontent"></div></section></div></div>
+
+<footer id="sitefooter" hidden><div class="wrap">Portfol-You is a concept website. Sample projects are fictional; linked e-portfolios are actual external websites.</div></footer>
+
+<script src="script.js" defer></script>
+<dialog id="authDialog" class="panel auth-dialog" aria-labelledby="authTitle"><div class="row"><h2 id="authTitle">Log in</h2><button type="button" class="btn ghost" id="authClose" aria-label="Close">✕</button></div><p id="authReason" class="note"></p><div class="row"><button class="btn" type="button" id="authLogin">Log in</button><button class="btn ghost" type="button" id="authSignup">Sign up</button></div><form id="authForm"><label id="authNameRow" hidden>Full name<input name="name" autocomplete="name" maxlength="100"></label><label>Email<input name="email" type="email" required autocomplete="email"></label><label>Password<input name="password" type="password" required minlength="8" autocomplete="current-password"></label><label id="authConfirmRow" hidden>Confirm password<input name="confirm" type="password" autocomplete="new-password"></label><button class="btn" id="authSubmit" type="submit">Log in</button><p id="authStatus" role="status"></p></form><p class="note">Local prototype only. Use a test password, not a real account password. Roles are self-selected and not verified.</p></dialog></body>
+</html>
